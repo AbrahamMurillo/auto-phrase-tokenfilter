@@ -1,7 +1,23 @@
 
 <ivysettings>
-    <settings defaultResolver="central"/>
+    <settings defaultResolver="default"/>
     <resolvers>
+        <ibiblio name="my-maven" m2compatible="true" root="https://repo1.maven.org/maven2/"/>
+        <ibiblio name="my-maven1" m2compatible="true" root="https://mvnrepository.com/artifact/org.restlet.jee/org.restlet.ext.servlet/"/>
+        <ibiblio name="restlet" m2compatible="true" root="http://maven.restlet.com"/>
+        <!--<ibiblio name="staging" m2compatible="true" root="https://oss.sonatype.org/content/repositories/orgagileclick-1008"/>-->
         <ibiblio name="central" m2compatible="true"/>
+        <chain name="default">
+            <!--<resolver ref="central"/>-->
+            <resolver ref="my-maven"/>
+            <resolver ref="my-maven1"/>
+            <resolver ref="restlet"/>
+            <!--<resolver ref="local-m2"/>-->
+        </chain>
     </resolvers>
+    <modules>
+        <module organization="org.restlet.jee" resolver="restlet"/>
+        <module organization="restlet" resolver="restlet"/>
+        <module organization="org.restlet" resolver="restlet"/>
+    </modules>
 </ivysettings>

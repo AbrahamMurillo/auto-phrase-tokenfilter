@@ -96,7 +96,7 @@
 
   <target name="ivy-download" unless="ivy.jar.exists">
     <mkdir dir="${build.lib.dir}"/>
-    <get src="http://repo2.maven.org/maven2/org/apache/ivy/ivy/${ivy.version}/ivy-${ivy.version}.jar"
+    <get src="https://repo1.maven.org/maven2/org/apache/ivy/ivy/${ivy.version}/ivy-${ivy.version}.jar"
          dest="${build.lib.dir}/ivy-${ivy.version}.jar"
          usetimestamp="true"/>
   </target>
